@@ -1,3 +1,28 @@
 *.env
 *__pycache__
 .gitignore
+
+# Eclipse / STS
+.metadata/
+.settings/
+.classpath
+.project
+
+# Build output
+target/
+
+# OS files
+.DS_Store
+Thumbs.db
+.vscode/
+*.log
+
+# Git & Line endings
+* text=auto
+*.sh text eol=lf
+*.cmd text eol=crlf
+mvnw text eol=lf
+mvnw.cmd text eol=crlf
+.gitattributes text eol=lf
+pom.xml text eol=lf
+*.java text eol=lf
