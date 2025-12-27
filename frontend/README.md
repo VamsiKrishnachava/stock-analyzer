@@ -1,0 +1,1 @@
+------------- This document is for the front end of stock analyzer ----------------
