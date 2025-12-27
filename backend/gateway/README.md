@@ -1,0 +1,1 @@
+------------- This document is for the gateway microsrvice ----------------
