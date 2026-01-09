@@ -1,7 +1,9 @@
 package com.stockanalyzer.userservice.entities;
 
+import java.time.Instant;
 import java.util.Objects;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,10 +16,21 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private Long id;
+	
+	@Column(nullable = false)
 	private String fullName;
+	
+	@Column(nullable = false)
 	private String password;
+	
+	@Column(nullable = false, unique = true)
 	private String email;
+
+	@Column(nullable = false, updatable = false, insertable = false)
+	private Instant createdAt;
+	
+	private Instant updatedAt;
 	
 	public User(String fullName, String password, String email) {
 		this.fullName = fullName;
@@ -33,12 +46,8 @@ public class User {
 		this.email = email;
 	}
 
-	public int getId() {
+	public Long getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getFullName() {
@@ -55,6 +64,14 @@ public class User {
 
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public Instant getCreatedAt() {
+		return createdAt;
+	}
+
+	public Instant getUpdatedAt() {
+		return updatedAt;
 	}
 	
 	@Override
